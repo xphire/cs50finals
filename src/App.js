@@ -10,7 +10,7 @@ function App() {
 
   const [image,setImage] = React.useState("https://picsum.photos/seed/picsum/200/300");
   const [url, setUrl] = React.useState("");
-  const [history, setHistory] = React.useState(JSON.parse(sessionStorage.getItem("history")) || []);
+  const [history, setHistory] = React.useState(JSON.parse(localStorage.getItem("history")) || []);
 
   const makeQR = async () => {
 
@@ -33,7 +33,7 @@ function App() {
 
       const laminar = [obj,...prevHistory];
 
-      sessionStorage.setItem("history",JSON.stringify(laminar));
+      localStorage.setItem("history",JSON.stringify(laminar));
 
       return laminar;
     })
