@@ -6,7 +6,7 @@ export default function Header() {
                 <p className="bg-white p-3 text-dark text-nowrap display-3">URL TO QR TOOL</p>
                 <small className="lead"><em>Convert your Urls to QR code. View, export and much more...</em></small>
             </div>
-            <div className="divider col h-50">
+            <div className="divider col h-50 d-none d-lg-block">
             </div>
         </header>
     )

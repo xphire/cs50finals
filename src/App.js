@@ -20,7 +20,8 @@ function App() {
 
     const obj = {
       "id" : nanoid(),
-      "url" : url
+      "url" : url,
+      "qr" : result
     };
 
     setHistory((prevHistory) => {
@@ -30,6 +31,7 @@ function App() {
       {
         return prevHistory;
       }
+ 
 
       const laminar = [obj,...prevHistory];
 

@@ -74,8 +74,8 @@ export default  function Main({image, makeQR , getUrl , url , history}) {
   
     return (
         <main className="main text-center py-3 display-3 text-white d-flex flex-column align-items-center overflow-y-scroll">
-            <div className='d-flex flex-column justify-content-around mb-3'>
-                <img className='mb-5' src={image} width={'500px'} height={'500px'} alt="qr code" />
+            <div className='d-flex flex-column justify-content-around mb-3 imagify'>
+                <img className='mb-5' src={image} alt="qr code" />
                 <Stack spacing={2} >
                     <TextField id="outlined-basic" label="Enter URL Here" variant="outlined" size='large' type='url' name='url' onChange={(e) => {inputDisable(e)}} />
                     <Button className='py-3' variant="contained" disabled={disable} size ="large" endIcon={<QrCodeIcon />} onClick={() => disableMUI()}>GENERATE QR </Button>

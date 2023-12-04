@@ -17,12 +17,13 @@ export default function DisplayHistory({rows }){
         const [open, setOpen] = React.useState(false);
         const [text, setText] = React.useState("");
         const [modalImage, setModalImage] = React.useState("");
-
+       
 
         const setQR = async (url) => {
 
             const result = await generate(url);
             setModalImage(result);
+
         }
 
 
@@ -32,9 +33,6 @@ export default function DisplayHistory({rows }){
             setQR(url)
             setOpen(true);
         };
-
-        
-       
 
  
 
@@ -69,10 +67,10 @@ export default function DisplayHistory({rows }){
                                         <TableCell align='center' className='fs-4'>{index + 1}</TableCell> 
                                         <TableCell align='center' className='fs-4'>{item.url}</TableCell>
                                         <TableCell align='center'>
-                                        <Button className='py-3' variant="contained"  size ="large" onClick={() => {handleOpen(item.url)}} endIcon={<PreviewIcon />} >VIEW QR </Button>
+                                        <Button className='py-3 text-nowrap' variant="contained"  size ="large" onClick={() => {handleOpen(item.url)}} endIcon={<PreviewIcon />} >VIEW QR </Button>
                                         </TableCell>
                                         <TableCell align='center'>
-                                        <Button className='py-3' href={modalImage} target='_blank' download variant="contained"  size ="large" endIcon={<DownloadIcon />} >DOWNLOAD QR </Button>
+                                        <Button className='py-3 text-nowrap' href={item.qr} id={item.id} target='_blank' download='QRCODE' variant="contained"  size ="large"  endIcon={<DownloadIcon />} >DOWNLOAD QR </Button>
                                         </TableCell> 
                                     </TableRow>
                                 )
