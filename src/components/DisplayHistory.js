@@ -70,7 +70,7 @@ export default function DisplayHistory({rows }){
                                         <Button className='py-3 text-nowrap' variant="contained"  size ="large" onClick={() => {handleOpen(item.url)}} endIcon={<PreviewIcon />} >VIEW QR </Button>
                                         </TableCell>
                                         <TableCell align='center'>
-                                        <Button className='py-3 text-nowrap' href={item.qr} id={item.id} target='_blank' download= {item.url + '.jpg'} variant="contained"  size ="large"  endIcon={<DownloadIcon />} >DOWNLOAD QR </Button>
+                                        <Button className='py-3 text-nowrap' href={item.qr} id={item.id} target='_blank' download= {item.url + item.id + '.jpg'} variant="contained"  size ="large"  endIcon={<DownloadIcon />} >DOWNLOAD QR </Button>
                                         </TableCell> 
                                     </TableRow>
                                 )
